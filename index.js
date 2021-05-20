@@ -1,7 +1,7 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const app = express();
-const baseurl = 'UR URL'
+const baseurl = 'https://cdn.nongmerbot.repl.co'
 const PORT = 8000;
 app.use('/form', express.static(__dirname + '/index.html'));
 app.use('/files/', express.static('uploads'))
@@ -10,6 +10,7 @@ app.use(fileUpload());
 app.get('/', (req,res) => res.redirect('/form'))
 app.get('/ping', function(req, res) {
   res.send('pong');
+  console.log(req.headers)
 });
 
 
