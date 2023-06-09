@@ -99,4 +99,4 @@ next();
 
 app.use("/raw", express.static(path.join(__dirname, 'files')));
     // app.post()
-app.listen(config.port, () => console.log(`Example app listening on port ${config.port}! (${config.url})`));
+app.listen(config.PORT, () => console.log(`Example app listening on port ${config.PORT}! (${config.URL})`));
