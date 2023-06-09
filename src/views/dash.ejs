@@ -1,0 +1,23 @@
+<div class="hero min-h-screen bg-base-200">
+    <div class="hero-content text-center">
+        <div class="max-w-md">
+            <h1 class="text-5xl font-bold">Dash</h1>
+            <p class="py-3">
+                <% if (items.length > 0) { %>
+            <ul class="menu bg-base-300 rounded-box">
+                <% items.forEach(item=> { %>
+                    <li class="pt-2"><a href="/files/<%=item.id%>">
+                            <%=item.name%>
+                        </a></li>
+                    <% }) %>
+            </ul>
+            <% } else { %>
+<p class="p-5 border bg-base-300 rounded-lg"> Upload some things! </p>
+            <% } %>
+            </p>
+            <!-- <button class="btn btn-primary">Get Started</button> -->
+            <a class="btn btn-primary m-2" href="/dash/config">CDN Config</a>
+
+        </div>
+    </div>
+</div>

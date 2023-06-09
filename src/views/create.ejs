@@ -1,0 +1,32 @@
+<script src="javascript/create.js"></script>
+
+<div class="p-5 bg-base-200 min-h-screen rounded-lg items-stretch hover:items-baseline  pl-96 ">
+   <h1 class=" font-bold text-2xl">Create/Upload file(s)</h1>
+   <form id="createForm">
+    <input type="file" class="file-input w-full max-w-xs m-2" name="file" multiple required />
+    <div class="flex flex-col w-96">
+        <label class="label cursor-pointer">
+          <span class="label-text">Private</span> 
+          <input type="checkbox" class="toggle" name="private" />
+        </label>
+      </div>
+      <div class="form-control w-full max-w-xs">
+        <label class="label">
+          <span class="label-text">Caption</span>
+        </label>
+        <input type="text" placeholder="Type here"  name="caption" class="input input-bordered w-full max-w-xs" />
+      </div>
+      <input class="btn btn-neutral m-5 ml-10" type="submit">
+      </div>
+   </form>
+</div>
+
+<dialog id="my_modal_2" class="modal">
+    <form method="dialog" class="modal-box" action="/e+5">
+      <h3 class="font-bold text-lg">File uploaded</h3>
+      <p class="py-4">You can find your file at <a id="filelink">this link</a>.</p>
+    </form>
+    <form method="dialog" class="modal-backdrop" onsubmit="return false"  action="/e+5">
+        <button>close</button>
+    </form>
+  </dialog>

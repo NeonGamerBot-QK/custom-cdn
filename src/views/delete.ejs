@@ -1,0 +1,35 @@
+<script src="javascript/delete.js"></script>
+
+<div class="p-5 bg-base-200 min-h-screen rounded-lg items-stretch hover:items-baseline  pl-96 ">
+   <h1 class=" font-bold text-2xl">Delete file</h1>
+   <form id="deleteForm">
+  
+      <% if (items.length > 0) { %>
+        <select class="select w-full max-w-xs" name="id">
+            <option disabled selected>Pick your file</option>
+            <% items.forEach(item=> { %>
+              <option value="<%=item.id%>"> <%=item.name%> (<%=item.id%>) </option>
+                <% }) %>
+          </select>
+       
+        <% } else { %>
+<p class="p-5 border bg-base-300 rounded-lg w-96"> Nothing to delete! </p>
+        <% } %>
+        <% if (items.length > 0) { %>
+            <input class="btn btn-neutral m-5 ml-10"  type="submit">
+            <% } else { %>
+                <input class="btn btn-neutral m-5 ml-10" disabled aria-disabled type="submit">
+
+            <% } %>
+      </div>
+   </form>
+</div>
+
+<dialog id="my_modal_2" class="modal">
+    <form method="dialog" class="modal-box" action="/e+5">
+      <h3 class="font-bold text-lg">File Deleted!</h3>
+    </form>
+    <form method="dialog" class="modal-backdrop" onsubmit="return false"  action="/e+5">
+        <button>close</button>
+    </form>
+  </dialog>

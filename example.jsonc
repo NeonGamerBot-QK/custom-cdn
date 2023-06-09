@@ -1,0 +1,10 @@
+{
+    "name": "example.png", // Name for file
+    "private": false, // Private or not
+    "id": "000000-0000000-000000", // UUID
+    "path": "/path/to/file.png", // Path to file on disk
+    "size": 4006, // Size of file in bytes
+    "enc": "image/png", // File encoding
+    "uploadedAt": 1620000000000, // Timestamp of upload
+    "caption": "This is an example image", // Caption for file
+}

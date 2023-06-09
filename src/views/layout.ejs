@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN - <%=title%></title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.3/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="/tailwind.js"></script>
+</head>
+<body>
+    <%- renderPage("partials/head", { title }) %>
+    <%- content %>
+    <%- renderPage("partials/footer") %>
+</body>
+</html>
