@@ -95,4 +95,5 @@ module.exports = (db) => {
       json.DeletionURL = config.URL + "/delete?id={json:firstId}&a=1";
       res.json(json)
     })
+    return router;
 }
