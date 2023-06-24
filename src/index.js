@@ -76,15 +76,16 @@ app.get("/delete", Authenticated, (req, res) => {
 
 app.use("/files/", (req,res,next) => {
     let entry = (db.get("posts") || []).find(f => f.id === req.path.split("/")[1].split(".")[0]);
-    if(!entry) return res.status(403).json({ success: false, error: 2 });
-if(entry.private && !req.session.loggedin) return res.status(401).json({ success: false, error: 3 });
+    console.debug(db.get("posts"), req.path.split("/")[1].split(".")[0], req.path)
+    if(!entry) return res.status(403).json({ success: false, error: 1 });
+if(entry.private && !req.session.loggedin) return res.status(401).json({ success: false, error: 2 });
 next();
 })
 app.get("/files/:id", (req,res) => {
     const id = req.params.id;
     const file = (db.get("posts") || []).find(f => f.id === id);
 
-    if(!file) return res.status(404).json({ success: false, error: 2 });
+    if(!file) return res.status(404).json({ success: false, error: 1 });
     const file_data = fs.readFileSync(file.path).toString();
     renderTemplate('file', res, { title: config.TITLE, url: config.URL, description: config.DESCRIPTION, url: config.URL, file, isBinaryFile: /\ufffd/.test(file_data) === true, data: file_data  });
 })
