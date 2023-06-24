@@ -27,7 +27,7 @@ app.use(cookieSession({
     // Cookie Options
     maxAge: config.MAX_COOKIE_AGE || 24 * 60 * 60 * 1000 // 24 hours
   }))
-app.use('/api', require('./api'));
+app.use('/api', require('./api')(db));
 // use ejs
 // app.set('view engine', 'ejs');
 
@@ -76,7 +76,7 @@ app.get("/delete", Authenticated, (req, res) => {
 
 app.use("/files/", (req,res,next) => {
     let entry = (db.get("posts") || []).find(f => f.id === req.path.split("/")[1].split(".")[0]);
-    console.debug(db.get("posts"), req.path.split("/")[1].split(".")[0], req.path)
+    // console.debug(db.get("posts"), req.path.split("/")[1].split(".")[0], req.path)
     if(!entry) return res.status(403).json({ success: false, error: 1 });
 if(entry.private && !req.session.loggedin) return res.status(401).json({ success: false, error: 2 });
 next();
