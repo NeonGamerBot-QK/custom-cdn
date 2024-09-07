@@ -1,7 +1,8 @@
 name: publish
 on:
   push:
-    - "main"
+    branches:
+      - "master"
   workflow_dispatch:
 
 jobs:
