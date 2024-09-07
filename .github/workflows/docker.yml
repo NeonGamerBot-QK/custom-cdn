@@ -17,5 +17,5 @@ jobs:
           password: ${{ secrets.MY_TOKEN }}
       - name: Build the Docker image
         run: |
-         docker build . --tag ghcr.io/neongamerbot/custom-cdn:latest
-         docker push ghcr.io/neongamerbot/custom-cdn:latest
+          docker build . --tag ghcr.io/neongamerbot/custom-cdn:latest
+          docker push ghcr.io/neongamerbot/custom-cdn:latest
